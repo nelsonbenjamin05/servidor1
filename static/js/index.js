@@ -5,7 +5,7 @@ function entrar() {
         message = new Paho.MQTT.Message(msg);
         message.destinationName = "nelsonbenjamin05@gmail.com/ts";
         client.send(message);
-		document.getElementById("tu").innerHTML=msg;
+		
 }
   
   client = new Paho.MQTT.Client("maqiatto.com", 8883, "web_" + parseInt(Math.random() * 100, 10));
@@ -31,6 +31,22 @@ function entrar() {
     message.destinationName = "nelsonbenjamin05@gmail.com/ts";
     client.send(message);
 	
+  }
+
+  function doFail(e){
+    console.log(e);
+	
+  }
+
+  function onConnectionLost(responseObject) {
+    if (responseObject.errorCode !== 0) {
+      console.log("onConnectionLost:"+responseObject.errorMessage);
+    }
+  }
+
+  function onMessageArrived(message) {
+	var msg=message.payloadString;
+	document.getElementById("sn1").innerHTML=msg;
   }
 
   function doFail(e){
