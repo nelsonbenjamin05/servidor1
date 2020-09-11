@@ -20,7 +20,7 @@ function enviar() {
   var options = {
    useSSL: false,
     userName: "nelsonbenjamin05@gmail.com",
-    password: "BenjaKuri.25",
+    password: "123456789",
     onSuccess:onConnect,
     onFailure:doFail
   }
@@ -58,4 +58,3 @@ function enviar() {
 	var msg=message.payloadString;
 	document.getElementById("bot").innerHTML=msg;
   }
-  
