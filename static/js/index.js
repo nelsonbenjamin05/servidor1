@@ -3,7 +3,7 @@
 function enviar() {
 		var msg=document.getElementById("datos").value;
         message = new Paho.MQTT.Message(msg);
-        message.destinationName = "link94j@gmail.com/test1";
+        message.destinationName = "nelsonbenjamin05@gmail.com/ts";
         client.send(message);
 		document.getElementById("tu").innerHTML=msg;
 }
@@ -19,8 +19,8 @@ function enviar() {
   client.onMessageArrived = onMessageArrived;
   var options = {
    useSSL: false,
-    userName: "link94j@gmail.com",
-    password: "123456",
+    userName: "nelsonbenjamin05@gmail.com",
+    password: "BenjaKuri.25",
     onSuccess:onConnect,
     onFailure:doFail
   }
@@ -33,9 +33,9 @@ function enviar() {
     // Once a connection has been made, make a subscription and send a message.
     console.log("Conectado...");
 	
-    client.subscribe("link94j@gmail.com/test");
+    client.subscribe("nelsonbenjamin05@gmail.com/ts1");
     message = new Paho.MQTT.Message("hola desde la web");
-    message.destinationName = "link94j@gmail.com/test1";
+    message.destinationName = "nelsonbenjamin05@gmail.com/ts";
     client.send(message);
 	
   }
